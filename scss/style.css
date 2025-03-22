@@ -155,8 +155,8 @@ body {
 
 .main {
   width: 100%;
-  padding: 0 calc(var(--index) * 1.4);
-  margin: calc(var(--index) * 1.2) 0 0;
+  padding: 0 calc(var(--index) * 1.4) calc(var(--index) * 1.5);
+  margin: calc(var(--index) * 1) 0 0;
 }
 .main .container {
   width: 100%;
@@ -168,12 +168,13 @@ body {
 .main .container .trips, .main .container .info {
   display: flex;
   flex-direction: column;
-  gap: calc(var(--index) * 0.6);
+  gap: calc(var(--index) * 0.4);
   flex: 1 1;
 }
 .main .container .trips-title, .main .container .info-title {
-  font-size: calc(var(--index) * 1.1);
+  font-size: calc(var(--index) * 0.8);
   align-self: flex-start;
+  opacity: 0.6;
 }
 .main .container .trips-content, .main .container .info-content {
   display: flex;
@@ -183,7 +184,15 @@ body {
   border-radius: calc(var(--index) * 0.4);
   gap: calc(var(--index) * 1);
 }
-.main .container .trips-content__item {
+.main .container .trips-content::-webkit-scrollbar {
+  height: 0px;
+}
+.main .container .trips-content {
+  height: 100%;
+  max-height: calc(var(--index) * 32);
+  overflow-y: auto;
+}
+.main .container .trips-content .trips-content__item {
   display: flex;
   background: #212224;
   padding: calc(var(--index) * 0.8) calc(var(--index) * 1.2);
@@ -195,7 +204,7 @@ body {
           user-select: none;
   cursor: pointer;
 }
-.main .container .trips-content__item .location {
+.main .container .trips-content .trips-content__item .location {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -203,30 +212,30 @@ body {
   width: 100%;
   padding: 0 calc(var(--index) * 1.4) 0 0;
 }
-.main .container .trips-content__item .location .departure, .main .container .trips-content__item .location .arrival {
+.main .container .trips-content .trips-content__item .location .departure, .main .container .trips-content .trips-content__item .location .arrival {
   display: flex;
   flex-direction: column;
   text-align: left;
 }
-.main .container .trips-content__item .location .departure .time, .main .container .trips-content__item .location .arrival .time {
+.main .container .trips-content .trips-content__item .location .departure .time, .main .container .trips-content .trips-content__item .location .arrival .time {
   font-size: calc(var(--index) * 1);
   font-weight: bold;
   align-items: center;
   display: flex;
   gap: calc(var(--index) * 0.5);
 }
-.main .container .trips-content__item .location .departure .time span, .main .container .trips-content__item .location .arrival .time span {
+.main .container .trips-content .trips-content__item .location .departure .time span, .main .container .trips-content .trips-content__item .location .arrival .time span {
   font-size: calc(var(--index) * 0.6);
   color: #777;
 }
-.main .container .trips-content__item .location .departure .city, .main .container .trips-content__item .location .arrival .city {
+.main .container .trips-content .trips-content__item .location .departure .city, .main .container .trips-content .trips-content__item .location .arrival .city {
   font-size: calc(var(--index) * 0.6);
 }
-.main .container .trips-content__item .location .departure .station, .main .container .trips-content__item .location .arrival .station {
+.main .container .trips-content .trips-content__item .location .departure .station, .main .container .trips-content .trips-content__item .location .arrival .station {
   font-size: calc(var(--index) * 0.6);
   color: #555;
 }
-.main .container .trips-content__item .ticket-info {
+.main .container .trips-content .trips-content__item .ticket-info {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -240,36 +249,94 @@ body {
   -webkit-hyphens: none;
   hyphens: none;
 }
-.main .container .trips-content__item .ticket-info .price {
+.main .container .trips-content .trips-content__item .ticket-info .price {
   font-size: calc(var(--index) * 1);
   font-weight: bold;
 }
-.main .container .trips-content__item .ticket-info .price .fi-rr-coins {
+.main .container .trips-content .trips-content__item .ticket-info .price .fi-rr-coins {
   font-size: calc(var(--index) * 0.6);
   opacity: 0.5;
 }
-.main .container .trips-content__item:hover {
+.main .container .trips-content .trips-content__item:first-of-type {
+  background: linear-gradient(282deg, rgb(83, 74, 219) 48%, rgb(111, 110, 238) 83%);
+  position: relative;
+}
+.main .container .trips-content .trips-content__item:first-of-type .vital {
+  position: absolute;
+  top: -10%;
+  background-color: #0e0e0e;
+  font-size: calc(var(--index) * 0.6);
+  font-weight: bold;
+  padding: calc(var(--index) * 0.1) calc(var(--index) * 0.4);
+  border-radius: calc(var(--index) * 0.4);
+}
+.main .container .trips-content .trips-content__item:first-of-type .vital .fi-bs-fire-flame-curved {
+  font-size: calc(var(--index) * 0.5);
+  color: rgb(255, 60, 0);
+}
+.main .container .trips-content .trips-content__item:first-of-type .location .departure .time span, .main .container .trips-content .trips-content__item:first-of-type .location .arrival .time span {
+  color: white;
+}
+.main .container .trips-content .trips-content__item:first-of-type .location .departure .station, .main .container .trips-content .trips-content__item:first-of-type .location .arrival .station {
+  color: white;
+}
+.main .container .trips-content .trips-content__item:first-of-type .ticket-info {
+  border-left: calc(var(--index) * 0.1) solid white;
+}
+.main .container .trips-content .trips-content__item:hover {
   border: calc(var(--index) * 0.1) solid #929BF6;
 }
 .main .container .info-content {
-  gap: calc(var(--index) * 1.2);
+  gap: calc(var(--index) * 0.8);
   background-color: transparent;
   justify-content: space-between;
   height: 100%;
   padding: 0;
 }
+.main .container .info-content .greeting {
+  margin: calc(var(--index) * 1.5) 0 0;
+  width: 100%;
+  display: flex;
+  gap: calc(var(--index) * 1.5);
+  justify-content: space-between;
+}
+.main .container .info-content .greeting-img {
+  flex: 1 1;
+  background-position: center;
+  background-size: cover;
+  border-radius: calc(var(--index) * 0.5);
+}
+.main .container .info-content .greeting-title {
+  flex: 1 1;
+  font-size: calc(var(--index) * 2);
+  line-height: calc(var(--index) * 2.3);
+  font-weight: bold;
+}
+.main .container .info-content .greeting-title span {
+  color: #929BF6;
+}
 .main .container .info-content .order-form {
+  display: flex;
+  gap: calc(var(--index) * 0.4);
+  flex-direction: column;
+}
+.main .container .info-content .order-form .order-form-title {
+  font-size: calc(var(--index) * 0.8);
+  align-self: flex-start;
+  opacity: 0.6;
+}
+.main .container .info-content .order-form .form {
   background-color: #17181A;
   padding: calc(var(--index) * 1);
   border-radius: calc(var(--index) * 0.4);
 }
-.main .container .info-content .order-form .trip-order {
+.main .container .info-content .order-form .form .trip-order {
   display: flex;
   font-size: calc(var(--index) * 0.6);
   justify-content: space-between;
   gap: calc(var(--index) * 0.8);
 }
-.main .container .info-content .order-form .trip-order .fields {
+.main .container .info-content .order-form .form .trip-order .fields {
   display: flex;
   width: -moz-fit-content;
   width: fit-content;
@@ -277,30 +344,31 @@ body {
   border-radius: calc(var(--index) * 0.5);
   flex-wrap: nowrap;
 }
-.main .container .info-content .order-form .trip-order .fields input {
+.main .container .info-content .order-form .form .trip-order .fields input {
   padding: calc(var(--index) * 0.5);
   border-right: calc(var(--index) * 0.1) solid #2F3032;
 }
-.main .container .info-content .order-form .trip-order .fields .date {
+.main .container .info-content .order-form .form .trip-order .fields .date {
   width: calc(var(--index) * 3);
 }
-.main .container .info-content .order-form .trip-order .fields .peoples {
+.main .container .info-content .order-form .form .trip-order .fields .peoples {
   border: none;
   width: calc(var(--index) * 4);
 }
-.main .container .info-content .order-form .trip-order button {
+.main .container .info-content .order-form .form .trip-order button {
   background: linear-gradient(282deg, rgb(83, 74, 219) 48%, rgb(111, 110, 238) 83%);
   padding: 0 calc(var(--index) * 1.1);
   border-radius: calc(var(--index) * 0.5);
 }
 .main .container .popular-trips {
   display: flex;
-  gap: calc(var(--index) * 0.6);
+  gap: calc(var(--index) * 0.4);
   flex-direction: column;
 }
 .main .container .popular-trips .popular-trips-title {
-  font-size: calc(var(--index) * 1.1);
+  font-size: calc(var(--index) * 0.8);
   align-self: flex-start;
+  opacity: 0.6;
 }
 .main .container .popular-trips .popular-trips-content::-webkit-scrollbar {
   height: 0px;
@@ -366,12 +434,13 @@ body {
 }
 .main .container .news {
   display: flex;
-  gap: calc(var(--index) * 0.6);
+  gap: calc(var(--index) * 0.4);
   flex-direction: column;
 }
 .main .container .news .news-title {
-  font-size: calc(var(--index) * 1.1);
+  font-size: calc(var(--index) * 0.8);
   align-self: flex-start;
+  opacity: 0.6;
 }
 .main .container .news .news-content::-webkit-scrollbar {
   height: 0px;
@@ -394,12 +463,15 @@ body {
   flex-shrink: 0;
 }
 .main .container .news .news-content .content__item .title {
-  width: 70%;
+  font-weight: bold;
+}
+.main .container .news .news-content .content__item .text {
   font-size: calc(var(--index) * 0.65);
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* Количество строк перед обрезкой */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  opacity: 0.7;
 }
 .main .container .news .news-content .content__item::before {
   content: "";

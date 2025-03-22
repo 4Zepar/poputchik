@@ -180,8 +180,8 @@ $blue-akcent: #929BF6;
 
 .main {
     width: 100%;
-    padding: 0 calc(var(--index) * 1.4);
-    margin: calc(var(--index) * 1.2) 0 0;
+    padding: 0 calc(var(--index) * 1.4) calc(var(--index) * 1.5);
+    margin: calc(var(--index) * 1) 0 0;
     // padding: calc(var(--index) * 1) calc(var(--index) * 7);
 
     .container {
@@ -194,14 +194,15 @@ $blue-akcent: #929BF6;
         .trips, .info {
             display: flex;
             flex-direction: column;
-            gap: calc(var(--index) * .6);
+            gap: calc(var(--index) * .4);
             // height: 100%;
 
             flex: 1 1;
 
             &-title {
-                font-size: calc(var(--index) * 1.1);
+                font-size: calc(var(--index) * .8);
                 align-self: flex-start;
+                opacity: .6;
             }
             &-content {
                 display: flex;
@@ -213,131 +214,217 @@ $blue-akcent: #929BF6;
             }
         }
 
-        .trips-content__item {
-            display: flex;
-            background: #212224;
-            padding: calc(var(--index) * .8) calc(var(--index) * 1.2);
-            border-radius: calc(var(--index) * .5);
-            transition: .3s ease-in-out;
-            border: calc(var(--index) * .1) solid #212224;
-            user-select: none;
-            cursor: pointer;
+        .trips-content::-webkit-scrollbar {
+            height: 0px;
+        }
 
-            .location {
+        .trips-content {
+            height: 100%;
+            max-height: calc(var(--index) * 32);
+            overflow-y: auto;
+
+            .trips-content__item {
                 display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: calc(var(--index) * 1);
-                width: 100%;
-                padding: 0 calc(var(--index) * 1.4) 0 0;
-
-                .departure, .arrival {
+                background: #212224;
+                padding: calc(var(--index) * .8) calc(var(--index) * 1.2);
+                border-radius: calc(var(--index) * .5);
+                transition: .3s ease-in-out;
+                border: calc(var(--index) * .1) solid #212224;
+                user-select: none;
+                cursor: pointer;
+    
+                .location {
                     display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: calc(var(--index) * 1);
+                    width: 100%;
+                    padding: 0 calc(var(--index) * 1.4) 0 0;
+    
+                    .departure, .arrival {
+                        display: flex;
+                        flex-direction: column;
+                        text-align: left;
+    
+                        .time {
+                            font-size: calc(var(--index) * 1);
+                            font-weight: bold;
+                            align-items: center;
+                            display: flex;
+                            gap: calc(var(--index) * .5);
+    
+                            span {
+                                font-size: calc(var(--index) * .6);
+                                color: #777;
+                            }
+                        }
+                        
+                        .city {
+                            font-size: calc(var(--index) * .6);
+                        }
+                        
+                        .station {
+                            font-size: calc(var(--index) * .6);
+                            color: #555;
+                        }
+                        
+                    }
+                }
+    
+                .ticket-info {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: center;
                     flex-direction: column;
-                    text-align: left;
-
-                    .time {
+                    padding: 0 0 0 calc(var(--index) * 1.4);
+                    border-left: calc(var(--index) * .1) solid #2F3032;
+                    white-space: nowrap;
+                    word-wrap: normal;
+                    word-break: normal;
+                    overflow-wrap: normal;
+                    -webkit-hyphens: none;
+                    -moz-hyphens: none;
+                    hyphens: none;
+    
+                    .price {
                         font-size: calc(var(--index) * 1);
                         font-weight: bold;
-                        align-items: center;
-                        display: flex;
-                        gap: calc(var(--index) * .5);
-
-                        span {
+                        
+                        .fi-rr-coins {
                             font-size: calc(var(--index) * .6);
-                            color: #777;
+                            opacity: .5;
                         }
                     }
-                    
-                    .city {
-                        font-size: calc(var(--index) * .6);
-                    }
-                    
-                    .station {
-                        font-size: calc(var(--index) * .6);
-                        color: #555;
-                    }
-                    
                 }
             }
 
-            .ticket-info {
-                display: flex;
-                align-items: flex-start;
-                justify-content: center;
-                flex-direction: column;
-                padding: 0 0 0 calc(var(--index) * 1.4);
-                border-left: calc(var(--index) * .1) solid #2F3032;
-                white-space: nowrap;
-                word-wrap: normal;
-                word-break: normal;
-                overflow-wrap: normal;
-                -webkit-hyphens: none;
-                -moz-hyphens: none;
-                hyphens: none;
+            .trips-content__item:first-of-type {
+                background: linear-gradient(282deg, rgb(83, 74, 219) 48%, rgb(111, 110, 238) 83%);
+                position: relative;
 
-                .price {
-                    font-size: calc(var(--index) * 1);
+                .vital {
+                    position: absolute;
+                    top: -10%;
+                    background-color: #0e0e0e;
+                    font-size: calc(var(--index) * .6);
                     font-weight: bold;
-                    
-                    .fi-rr-coins {
-                        font-size: calc(var(--index) * .6);
-                        opacity: .5;
+                    padding: calc(var(--index) * .1) calc(var(--index) * .4);
+                    border-radius: calc(var(--index) * .4);
+
+                    .fi-bs-fire-flame-curved {
+                        font-size: calc(var(--index) * .5);
+                        color: rgb(255, 60, 0);
                     }
                 }
+
+                .location {
+                    .departure, .arrival {
+                        .time {
+                            span {
+                                color: white;
+                            }
+                        }                    
+                        .station {
+                            color: white;
+                        }
+                        
+                    }
+                }
+                .ticket-info {
+                    border-left: calc(var(--index) * .1) solid white;
+                }
+            }
+    
+            .trips-content__item:hover {
+                border: calc(var(--index) * .1) solid $blue-akcent;
             }
         }
 
-        .trips-content__item:hover {
-            border: calc(var(--index) * .1) solid $blue-akcent;
-        }
+
 
 
         .info-content {
-            gap: calc(var(--index) * 1.2);
+            gap: calc(var(--index) * .8);
             background-color: transparent;
             justify-content: space-between;
             height: 100%;
             padding: 0;
 
-            .order-form {
-                background-color: $block-darkbg;
-                padding: calc(var(--index) * 1);
-                border-radius: calc(var(--index) * .4);
+            .greeting {
+                margin: calc(var(--index) * 1.5) 0 0;
+                width: 100%;
+                display: flex;
+                gap: calc(var(--index) * 1.5);
+                justify-content: space-between;
 
-                .trip-order {
-                    display: flex;
-                    font-size: calc(var(--index) * .6);
-                    justify-content: space-between;
-                    gap: calc(var(--index) * .8);
-    
-                    .fields {
+                &-img {
+                    flex: 1 1;
+                    background-position: center;
+                    background-size: cover;
+                    border-radius: calc(var(--index) * .5);
+                }
+                &-title {
+                    flex: 1 1;
+                    font-size: calc(var(--index) * 2);
+                    line-height: calc(var(--index) * 2.3);
+                    font-weight: bold;
+                    
+                    span {
+                        color: $blue-akcent;
+                    }
+                }
+            }
+
+            .order-form {
+                display: flex;
+                gap: calc(var(--index) * .4);
+                flex-direction: column;
+
+                .order-form-title {
+                    font-size: calc(var(--index) * .8);
+                    align-self: flex-start;
+                    opacity: .6;
+                }
+
+                .form {
+                    background-color: $block-darkbg;
+                    padding: calc(var(--index) * 1);
+                    border-radius: calc(var(--index) * .4);
+
+                    .trip-order {
                         display: flex;
-                        width: fit-content;
-                        background-color: #212224;
-                        // padding: calc(var(--index) * .5);
-                        border-radius: calc(var(--index) * .5);
-                        flex-wrap: nowrap;
-    
-                        input {
-                            padding: calc(var(--index) * .5);   
-                            border-right: calc(var(--index) * .1) solid #2F3032;
+                        font-size: calc(var(--index) * .6);
+                        justify-content: space-between;
+                        gap: calc(var(--index) * .8);
+        
+                        .fields {
+                            display: flex;
+                            width: fit-content;
+                            background-color: #212224;
+                            // padding: calc(var(--index) * .5);
+                            border-radius: calc(var(--index) * .5);
+                            flex-wrap: nowrap;
+        
+                            input {
+                                padding: calc(var(--index) * .5);   
+                                border-right: calc(var(--index) * .1) solid #2F3032;
+                            }
+                            
+                            .date {
+                                width: calc(var(--index) * 3);
+                            }
+        
+                            .peoples {
+                                border: none;
+                                width: calc(var(--index) * 4);
+                            }
                         }
                         
-                        .date {
-                            width: calc(var(--index) * 3);
+                        button {
+                            background: linear-gradient(282deg, rgba(83,74,219,1) 48%, rgba(111,110,238,1) 83%);
+                            padding: 0 calc(var(--index) * 1.1);
+                            border-radius: calc(var(--index) * .5);
                         }
-    
-                        .peoples {
-                            border: none;
-                            width: calc(var(--index) * 4);
-                        }
-                    }
-                    
-                    button {
-                        background: linear-gradient(282deg, rgba(83,74,219,1) 48%, rgba(111,110,238,1) 83%);
-                        padding: 0 calc(var(--index) * 1.1);
-                        border-radius: calc(var(--index) * .5);
                     }
                 }
             }
@@ -345,12 +432,13 @@ $blue-akcent: #929BF6;
 
         .popular-trips {
             display: flex;
-            gap: calc(var(--index) * .6);
+            gap: calc(var(--index) * .4);
             flex-direction: column;
 
             .popular-trips-title {
-                font-size: calc(var(--index) * 1.1);
+                font-size: calc(var(--index) * .8);
                 align-self: flex-start;
+                opacity: .6;
             }
             
             
@@ -432,12 +520,13 @@ $blue-akcent: #929BF6;
 
         .news {
             display: flex;
-            gap: calc(var(--index) * .6);
+            gap: calc(var(--index) * .4);
             flex-direction: column;
 
             .news-title {
-                font-size: calc(var(--index) * 1.1);
+                font-size: calc(var(--index) * .8);
                 align-self: flex-start;
+                opacity: .6;
             }
             
             
@@ -463,12 +552,16 @@ $blue-akcent: #929BF6;
                     flex-shrink: 0;
 
                     .title {
-                        width: 70%;
+                        font-weight: bold;
+                    }
+
+                    .text {
                         font-size: calc(var(--index) * .65);
                         display: -webkit-box;
-                        -webkit-line-clamp: 3; /* Количество строк перед обрезкой */
+                        -webkit-line-clamp: 3;
                         -webkit-box-orient: vertical;
                         overflow: hidden;
+                        opacity: .7;
                     }
 
                 }

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="scss/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oldenburg&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-straight/css/uicons-bold-straight.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <title>Document</title>
 </head>
@@ -37,7 +38,7 @@
                         <i class="fi fi-rr-comment-alt-middle"></i>
                     </button>
                     <div class="profile-img">
-                        <!-- <img src="/images/game-tarif.jpg" alt=""> -->
+                        <!-- <img src="../images/game-tarif.jpg" alt=""> -->
                     </div>
                 </div>
             </div>
@@ -49,6 +50,73 @@
             <section class="trips">
                 <div class="trips-title">Все поездки</div>
                 <div class="trips-content">
+                    <div class="trips-content__item">
+                        <div class="vital">
+                            <i class="fi fi-bs-fire-flame-curved"></i>
+                            СРОЧНО
+                        </div>
+                        <div class="location">
+                            <div class="departure">
+                                <div class="time">22:20 <span>22 мар, сб</span></div>
+                                <div class="city">Москва</div>
+                                <div class="station">Метро Щелковское</div>
+                            </div>
+                            <div class="arrival">
+                                <div class="time">06:03 <span>23 мар, вс</span></div>
+                                <div class="city">Санкт-Петербург</div>
+                                <div class="station">Метро Обводный канал</div>
+                            </div>
+                        </div>
+                        <div class="ticket-info">
+                            <div class="price">
+                                <i class="fi fi-rr-coins"></i>
+                                1250 ₽
+                            </div>
+                            <div class="places">осталось 3 места</div>
+                        </div>
+                    </div>
+                    <div class="trips-content__item">
+                        <div class="location">
+                            <div class="departure">
+                                <div class="time">22:20 <span>22 мар, сб</span></div>
+                                <div class="city">Москва</div>
+                                <div class="station">Метро Щелковское</div>
+                            </div>
+                            <div class="arrival">
+                                <div class="time">06:03 <span>23 мар, вс</span></div>
+                                <div class="city">Санкт-Петербург</div>
+                                <div class="station">Метро Обводный канал</div>
+                            </div>
+                        </div>
+                        <div class="ticket-info">
+                            <div class="price">
+                                <i class="fi fi-rr-coins"></i>
+                                1250 ₽
+                            </div>
+                            <div class="places">осталось 3 места</div>
+                        </div>
+                    </div>
+                    <div class="trips-content__item">
+                        <div class="location">
+                            <div class="departure">
+                                <div class="time">22:20 <span>22 мар, сб</span></div>
+                                <div class="city">Москва</div>
+                                <div class="station">Метро Щелковское</div>
+                            </div>
+                            <div class="arrival">
+                                <div class="time">06:03 <span>23 мар, вс</span></div>
+                                <div class="city">Санкт-Петербург</div>
+                                <div class="station">Метро Обводный канал</div>
+                            </div>
+                        </div>
+                        <div class="ticket-info">
+                            <div class="price">
+                                <i class="fi fi-rr-coins"></i>
+                                1250 ₽
+                            </div>
+                            <div class="places">осталось 3 места</div>
+                        </div>
+                    </div>
                     <div class="trips-content__item">
                         <div class="location">
                             <div class="departure">
@@ -136,25 +204,31 @@
                 </div>
             </section>
             <section class="info">
-                <div class="info-title">Найти поездку</div>
                 <div class="info-content">
+                    <div class="greeting">
+                        <div class="greeting-img" style="background-image: url(../images/poezdki.jpg);"></div>
+                        <div class="greeting-title">Сервис совместных поездок в <span>ДНР</span></div>
+                    </div>
                     <div class="order-form">
-                        <form class="trip-order">
-                            <div class="fields">
-                                <input type="text" placeholder="Город отправления" required>
-                                <input type="text" placeholder="Город прибытия" required>
-                                <input class="date" type="text" placeholder="Дата" id="arrivalDate" required>
-                                <input class="peoples" type="number" placeholder="Кол-во" required>
-                            </div>
-                            <button type="submit">Найти</button>
-                        </form>
+                        <div class="order-form-title">Найти поездку</div>
+                        <div class="form">
+                            <form class="trip-order">
+                                <div class="fields">
+                                    <input type="text" placeholder="Город отправления" required>
+                                    <input type="text" placeholder="Город прибытия" required>
+                                    <input class="date" type="text" placeholder="Дата" id="arrivalDate" required>
+                                    <input class="peoples" type="number" placeholder="Кол-во" required>
+                                </div>
+                                <button type="submit">Найти</button>
+                            </form>
+                        </div>
                     </div>
 
                     <div class="popular-trips">
                         <div class="popular-trips-title">Популярные поездки</div>
                         <div class="popular-trips-content">
                             <div class="content__item">
-                                <div class="city-bg" style="background-image: url(/images/piter.webp);"></div>
+                                <div class="city-bg" style="background-image: url(../images/piter.webp);"></div>
                                 <div class="item-info">
                                     <div class="arrive">Санкт-Петербург</div>
                                     <div class="price">от 850 ₽ за поездку</div>
@@ -162,7 +236,7 @@
                                 </div>
                             </div>
                             <div class="content__item">
-                                <div class="city-bg" style="background-image: url(/images/piter.webp);"></div>
+                                <div class="city-bg" style="background-image: url(../images/piter.webp);"></div>
                                 <div class="item-info">
                                     <div class="arrive">Санкт-Петербург</div>
                                     <div class="price">от 850 ₽ за поездку</div>
@@ -170,7 +244,7 @@
                                 </div>
                             </div>
                             <div class="content__item">
-                                <div class="city-bg" style="background-image: url(/images/piter.webp);"></div>
+                                <div class="city-bg" style="background-image: url(../images/piter.webp);"></div>
                                 <div class="item-info">
                                     <div class="arrive">Санкт-Петербург</div>
                                     <div class="price">от 850 ₽ за поездку</div>
@@ -178,7 +252,7 @@
                                 </div>
                             </div>
                             <div class="content__item">
-                                <div class="city-bg" style="background-image: url(/images/piter.webp);"></div>
+                                <div class="city-bg" style="background-image: url(../images/piter.webp);"></div>
                                 <div class="item-info">
                                     <div class="arrive">Санкт-Петербург</div>
                                     <div class="price">от 850 ₽ за поездку</div>
@@ -190,20 +264,9 @@
                     <div class="news">
                         <div class="news-title">Новости</div>
                         <div class="news-content">
-                            <div class="content__item" style="background-image: url(/images/office.jpg);">
-                                <div class="title">Текст какой-то новостиТекст какой-то новостиТекст какой-то новостиТекст какой-то новости</div>
-                            </div>
-                            <div class="content__item" style="background-image: url(/images/office.jpg);">
-                                <div class="title">Текст какой-то новостиТекст какой-то новостиТекст какой-то новостиТекст какой-то новости</div>
-                            </div>
-                            <div class="content__item" style="background-image: url(/images/office.jpg);">
-                                <div class="title">Текст какой-то новостиТекст какой-то новостиТекст какой-то новостиТекст какой-то новости</div>
-                            </div>
-                            <div class="content__item" style="background-image: url(/images/office.jpg);">
-                                <div class="title">Текст какой-то новостиТекст какой-то новостиТекст какой-то новостиТекст какой-то новости</div>
-                            </div>
-                            <div class="content__item" style="background-image: url(/images/office.jpg);">
-                                <div class="title">Текст какой-то новостиТекст какой-то новостиТекст какой-то новостиТекст какой-то новости</div>
+                            <div class="content__item" style="background-image: url(../images/office.jpg);">
+                                <div class="title">Заголовок:</div>
+                                <div class="text">Текст какой-то новостиТекст какой-то новостиТекст какой-то новостиТекст какой-то новостиТекст какой-то новости</div>
                             </div>
                         </div>
                     </div>
