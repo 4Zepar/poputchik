@@ -22,7 +22,6 @@ button {
 
 button:hover {
     transform: translateY(-7%);
-    // box-shadow: 0 calc(var(--index) * .3) calc(var(--index) * .6) #a3bdff;
 }
 
 a {
@@ -297,6 +296,8 @@ $blue-akcent: #929BF6;
                     }
                 }
             }
+
+// update
 
             .trips-content__item:first-of-type {
                 background: linear-gradient(282deg, rgb(83, 74, 219) 48%, rgb(111, 110, 238) 83%);
