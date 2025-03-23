@@ -6,12 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <link rel="stylesheet" href="scss/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oldenburg&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-straight/css/uicons-bold-straight.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <title>Document</title>
 </head>
 <body>
+    <div class="button-close">
+        <div class="line">
+            <div class="line-left"></div>
+            <div class="line-right"></div>
+        </div>
+    </div>
+
+    <div class="adapt-header">
+        <div class="container">
+            <ul class="adapt-header__nav">
+                <li class="adapt-header__nav-item">Главная</li>
+                <li class="adapt-header__nav-item">Все поездки</li>
+                <li class="adapt-header__nav-item">Новости</li>
+                <li class="adapt-header__nav-item">База знаний</li>
+                <li class="adapt-header__nav-item">Ссылка</li>
+            </ul>
+            <div class="btns">
+                <button class="profile-enter">
+                    Личный кабинет
+                </button>
+                <button class="add-trip">
+                    Добавить поездку
+                </button>
+            </div>
+        </div>
+    </div>
+
     <header class="header">
         <div class="container"> 
             <div class="header-menu">
@@ -26,6 +54,9 @@
                     <li class="header__nav-item">Ссылка</li>
                 </ul>
             </div>
+            <button class="menu-btn">
+                <i class="fi fi-br-menu-burger"></i>
+            </button>
             <div class="header-btns">
                 <button class="profile-enter">
                     Личный кабинет
@@ -206,7 +237,7 @@
             <section class="info">
                 <div class="info-content">
                     <div class="greeting">
-                        <div class="greeting-img" style="background-image: url(images/poezdki.jpg);"></div>
+                        <div class="greeting-img" style="background-image: url(images/poezdki\ .webp);"></div>
                         <div class="greeting-title">Сервис совместных поездок в <span>ДНР</span></div>
                     </div>
                     <div class="order-form">
